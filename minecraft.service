@@ -1,0 +1,15 @@
+[Unit]
+Description=servername Servidor Minecraft Bedrock
+After=network-online.target
+
+[Service]
+User=userxname
+WorkingDirectory=dirname/servername
+Type=forking
+ExecStart=/bin/bash dirname/servername/iniciar.sh
+ExecStop=/bin/bash dirname/servername/detener.sh
+GuessMainPID=no
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target
