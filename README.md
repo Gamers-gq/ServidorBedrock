@@ -19,7 +19,7 @@ Crea servidores de Minecraft Bedrock en sistemas Ubuntu/Debian con caracteristic
 
 <h2>Instalación</h2>
 Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
-<pre>curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/InstaladorMC.sh | bash</pre>
+<pre>curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/InstaladorMC.sh | bash</pre>
 
 
 <h2>Guía de instalación</h2>
