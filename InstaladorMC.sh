@@ -4,7 +4,7 @@
 # Instrucciones:https://gamers.gq/?page_id=1926
 
 # Instaldor de servidor de dedicado de Minecraft Bedrock
-# Para instalar escriba: curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/InstaladorMC.sh | bash
+# Para instalar escriba: curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/InstaladorMC.sh | bash
 
 
 echo "Script de instalación de Servidor Minecraft Bedrock por Marcus Mayorga"
@@ -42,7 +42,7 @@ Update_Scripts() {
 
   # Descargar scripts del repositorio
   echo "Descargando iniciar.sh desde el repositorio..."
-  curl -H "Accept-Encoding: identity" -L -o iniciar.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/iniciar.sh
+  curl -H "Accept-Encoding: identity" -L -o iniciar.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/iniciar.sh
   chmod +x iniciar.sh
   sed -i "s:directorio:$DirName:g" iniciar.sh
   sed -i "s:nombreservidor:$ServerName:g" iniciar.sh
@@ -50,7 +50,7 @@ Update_Scripts() {
   sed -i "s<pathvariable<$PATH<g" iniciar.sh
 
   echo "Descargando detener.sh desde el repositorio..."
-  curl -H "Accept-Encoding: identity" -L -o detener.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/detener.sh
+  curl -H "Accept-Encoding: identity" -L -o detener.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/detener.sh
   chmod +x detener.sh
   sed -i "s:directorio:$DirName:g" detener.sh
   sed -i "s:nombreservidor:$ServerName:g" detener.sh
@@ -58,7 +58,7 @@ Update_Scripts() {
   sed -i "s<pathvariable<$PATH<g" detener.sh
 
   echo "Descargando reiniciar.sh desde el repositorio..."
-  curl -H "Accept-Encoding: identity" -L -o reiniciar.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/reiniciar.sh
+  curl -H "Accept-Encoding: identity" -L -o reiniciar.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/reiniciar.sh
   chmod +x reiniciar.sh
   sed -i "s:directorio:$DirName:g" reiniciar.sh
   sed -i "s:nombreservidor:$ServerName:g" reiniciar.sh
@@ -66,20 +66,20 @@ Update_Scripts() {
   sed -i "s<pathvariable<$PATH<g" reiniciar.sh
 
   echo "Descargando permisos.sh desde el repositorio..."
-  curl -H "Accept-Encoding: identity" -L -o permisos.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/permisos.sh
+  curl -H "Accept-Encoding: identity" -L -o permisos.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/permisos.sh
   chmod +x permisos.sh
   sed -i "s:directorio:$DirName:g" permisos.sh
   sed -i "s:nombreservidor:$ServerName:g" permisos.sh
   sed -i "s:userxname:$UserName:g" permisos.sh
   sed -i "s<pathvariable<$PATH<g" permisos.sh
 
-  echo "Descargando updateservidor.sh desde el repositorio..."
-  curl -H "Accept-Encoding: identity" -L -o updateservidor.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/updateservidor.sh
-  chmod +x updateservidor.sh
-  sed -i "s:directorio:$DirName:g" updateservidor.sh
-  sed -i "s:nombreservidor:$ServerName:g" updateservidor.sh
-  sed -i "s:userxname:$UserName:g" updateservidor.sh
-  sed -i "s<pathvariable<$PATH<g" updateservidor.sh
+  echo "Descargando actualizarMC.sh desde el repositorio..."
+  curl -H "Accept-Encoding: identity" -L -o actualizarMC.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/actualizarMC.sh
+  chmod +x actualizarMC.sh
+  sed -i "s:directorio:$DirName:g" actualizarMC.sh
+  sed -i "s:nombreservidor:$ServerName:g" actualizarMC.sh
+  sed -i "s:userxname:$UserName:g" actualizarMC.sh
+  sed -i "s<pathvariable<$PATH<g" actualizarMC.sh
 
 }
 
@@ -87,7 +87,7 @@ Update_Scripts() {
 # Actualizar el servicio del servidor de Minecraft
 Update_Service() {
   echo "Configurando el servicio $ServerName de Minecraft..."
-  sudo curl -H "Accept-Encoding: identity" -L -o /etc/systemd/system/$ServerName.service https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/minecraft.service
+  sudo curl -H "Accept-Encoding: identity" -L -o /etc/systemd/system/$ServerName.service https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/minecraft.service
   sudo chmod +x /etc/systemd/system/$ServerName.service
   sudo sed -i "s:userxname:$UserName:g" /etc/systemd/system/$ServerName.service
   sudo sed -i "s:directorio:$DirName:g" /etc/systemd/system/$ServerName.service
@@ -235,7 +235,7 @@ Check_Architecture () {
     fi
 
 # Descargar dependencias.zip del repositorio de GitHub
-    curl -H "Accept-Encoding: identity" -L -o depends.zip https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/dependencias.zip
+    curl -H "Accept-Encoding: identity" -L -o depends.zip https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/dependencias.zip
     unzip dependencias.zip
     sudo mkdir /lib64
     # Crear enlace suave ld-linux-x86-64.so.2 asignado a ld-2.31.so
@@ -274,7 +274,7 @@ fi
 if [ -e "InstaladorMC.sh" ]; then
   rm -f "InstaladorMC.sh"
   echo "Copia local de InstaladorMC.sh ejecutándose. Saliendo y ejecutando la versión en línea..."
-  curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/InstaladorMC.sh | bash
+  curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/main/InstaladorMC.sh | bash
   exit 1
 fi
 
