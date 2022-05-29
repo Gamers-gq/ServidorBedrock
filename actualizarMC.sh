@@ -1,7 +1,17 @@
 #!/bin/bash
 # Autor: Marcus Mayorga
 
-# Script de actualizacion del servidor Minecraft Bedrock
+# Script para actualizar Minecraft
+
+
+# Establecer variable de ruta
+PATH="pathvariable"
+PathLength=${#PATH}
+if [[ "$PathLength" -gt 12 ]]; then
+    PATH="$PATH"
+else
+    echo "No se puede establecer la variable de ruta. ¡Es probable que necesite descargar una versión actualizada de InstaladorMC.sh de GitHub!"
+fi
 
 
 # Recuperar la última versión del servidor dedicado de Minecraft Bedrock
@@ -46,7 +56,7 @@ else
 # Instale la versión de Minecraft solicitada
         if [ ! -z "$DownloadFile" ]; then
             unzip -o "downloads/$DownloadFile" -x "*server.properties*" "*permissions.json*" "*whitelist.json*" "*valid_known_packs.json*" "*allowlist.json*"
-            Permissions=$(chmod u+x dirname/minecraftbe/servername/bedrock_server >/dev/null)
+            Permissions=$(chmod u+x dirname/MinecraftBedrock/nombreservidor/bedrock_server >/dev/null)
             echo "$DownloadFile" >version_installed.txt
         fi
     elif [[ "$InstalledFile" == "$LatestFile" ]]; then
@@ -64,7 +74,7 @@ else
 # Instale la versión de Minecraft solicitada
         if [ ! -z "$DownloadFile" ]; then
             unzip -o "downloads/$DownloadFile" -x "*server.properties*" "*permissions.json*" "*whitelist.json*" "*valid_known_packs.json*" "*allowlist.json*"
-            Permissions=$(chmod u+x dirname/MinecraftBedrock/servername/bedrock_server >/dev/null)
+            Permissions=$(chmod u+x dirname/MinecraftBedrock/nombreservidor/bedrock_server >/dev/null)
             echo "$DownloadFile" >version_installed.txt
         fi
     fi

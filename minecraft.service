@@ -1,13 +1,13 @@
 [Unit]
-Description=servername Servidor Minecraft Bedrock
+Description=nombreservidor Servidor Minecraft Bedrock
 After=network-online.target
 
 [Service]
 User=userxname
-WorkingDirectory=dirname/servername
+WorkingDirectory=directorio/nombreservidor
 Type=forking
-ExecStart=/bin/bash dirname/servername/iniciar.sh
-ExecStop=/bin/bash dirname/servername/detener.sh
+ExecStart=/bin/bash directorio/nombreservidor/iniciar.sh
+ExecStop=/bin/bash directorio/nombreservidor/detener.sh
 GuessMainPID=no
 TimeoutStartSec=600
 

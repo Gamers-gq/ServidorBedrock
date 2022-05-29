@@ -1,13 +1,13 @@
 #!/bin/bash
-# Autor: MarcusGamer
+# Autor: Marcus Mayorga
 
-# Script de inicio
+# Script para iniciar servidor
 
 # Establecer variable de ruta
-USERPATH="pathvariable"
-PathLength=${#USERPATH}
+PATH="pathvariable"
+PathLength=${#PATH}
 if [[ "$PathLength" -gt 12 ]]; then
-    PATH="$USERPATH"
+    PATH="$PATH"
 else
     echo "No se puede establecer la variable de ruta. ¡Es probable que necesite descargar una versión actualizada de InstaladorMC.sh de GitHub!"
 fi
@@ -22,13 +22,13 @@ fi
 
 # Comprobar si el servidor ya está iniciado
 ScreenWipe=$(screen -wipe 2>&1)
-if screen -list | grep -q "\.servername"; then
+if screen -list | grep -q "\.nombreservidor"; then
     echo "¡El servidor ya está iniciado! ejecuta screen -r para abrirlo"
     exit 1
 fi
 
 # Cambiar directorio al directorio del servidor
-cd dirname/MinecraftBedrock/servername
+cd directorio/MinecraftBedrock/nombreservidor
 
 # Crear carpeta de registros/copias de seguridad/descargas si no existe
 if [ ! -d "logs" ]; then
@@ -64,22 +64,22 @@ while [ -z "$DefaultRoute" ]; do
 done
 
 # Tomar posesión de los archivos del servidor y establecer los permisos correctos
-Permissions=$(sudo bash dirname/MinecraftBedrock/servername/permisos.sh -a)
+Permissions=$(sudo bash directorio/MinecraftBedrock/nombreservidor/permisos.sh -a)
 
 # Crear backup
 if [ -d "worlds" ]; then
-    echo "Respalando servidor (en la ruta MinecraftBedrock/servername/backups)"
+    echo "Respalando servidor (en la ruta MinecraftBedrock/nombreservidor/backups)"
     if [ -n "$(which pigz)" ]; then
-        echo "Respalando servidor (multiple cores) a la ruta MinecraftBedrock/servername/backups"
+        echo "Respalando servidor (multiple cores) a la ruta MinecraftBedrock/nombreservidor/backups"
         tar -I pigz -pvcf backups/$(date +%d.%m.%Y.%H.%M.%S).tar.gz worlds
     else
-        echo "Respalando servidor (single cored) a la ruta MinecraftBedrock/servername/backups"
+        echo "Respalando servidor (single cored) a la ruta MinecraftBedrock/nombreservidor/backups"
         tar -pzvcf backups/$(date +%d.%m.%Y.%H.%M.%S).tar.gz worlds
     fi
 
 # Rotar copias de seguridad - mantener las 5 más recientes
 Rotate=$(
-    pushd dirname/MinecraftBedrock/servername/backups
+    pushd directorio/MinecraftBedrock/nombreservidor/backups
     ls -1tr | head -n -5 | xargs -d '\n' rm -f --
     popd
 )
@@ -87,10 +87,10 @@ Rotate=$(
 echo "Iniciando el servidor de Minecraft. Para ver ejecute screen -r "
 echo "Para minimizar la ventana y permitir que el servidor se ejecute en segundo plano, presione Ctrl+A y luego Ctrl+D"
 
-BASH_CMD="LD_LIBRARY_PATH=dirname/MinecraftBedrock/servername dirname/MinecraftBedrock/servername/bedrock_server"
+BASH_CMD="LD_LIBRARY_PATH=directorio/MinecraftBedrock/nombreservidor directorio/MinecraftBedrock/nombreservidor/bedrock_server"
 if command -v gawk &>/dev/null; then
     BASH_CMD+=$' | gawk \'{ print strftime(\"[%Y-%m-%d %H:%M:%S]\"), $0 }\''
 else
     echo "No se encontró la aplicación gawk; las marcas de tiempo no estarán disponibles en los registros. ¡Elimine InstaladorMC.sh y ejecute el script de la nueva manera recomendada!"
 fi
-screen -L -Logfile logs/servername.$(date +%Y.%m.%d.%H.%M.%S).log -dmS servername /bin/bash -c "${BASH_CMD}"
+screen -L -Logfile logs/nombreservidor.$(date +%Y.%m.%d.%H.%M.%S).log -dmS nombreservidor /bin/bash -c "${BASH_CMD}"

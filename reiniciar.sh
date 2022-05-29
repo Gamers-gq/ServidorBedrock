@@ -1,15 +1,15 @@
 #!/bin/bash
-# Script de reinicio Servidor Minecraft Bedrock por MarcusGamer
+# Autor: Marcus Mayorga
 
-# Script de reinicio del servidor Minecraft Bedrock
+# Script para reiniciar el servidor
 
 
 
 # Establecer variable de ruta
-USERPATH="pathvariable"
-PathLength=${#USERPATH}
+PATH="pathvariable"
+PathLength=${#PATH}
 if [[ "$PathLength" -gt 12 ]]; then
-    PATH="$USERPATH"
+    PATH="$PATH"
 else
     echo "No se puede establecer la variable de ruta. ¡Es probable que necesite descargar una versión actualizada de InstaladorMC.sh de GitHub!"
 fi
@@ -23,7 +23,7 @@ fi
 
 
 # Comprobar si el servidor está iniciado
-if ! screen -list | grep -q "\.servername"; then
+if ! screen -list | grep -q "\.nombreservidor"; then
     echo "¡El servidor no se está ejecutando actualmente!"
     exit 1
 fi
@@ -32,24 +32,24 @@ echo "Enviando notificaciones de reinicio al servidor..."
 
 
 # Start countdown notice on server
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 30 segundos!§r $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 30 segundos!§r $(printf '\r')"
 sleep 23s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 7 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 7 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 6 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 6 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 5 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 5 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 4 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 4 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 3 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 3 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 2 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 2 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eEl servidor se reiniciara en 1 segundos! $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eEl servidor se reiniciara en 1 segundos! $(printf '\r')"
 sleep 1s
-screen -Rd servername -X stuff "say §c► §eDeteniendo Servidor...§r $(printf '\r')"
-screen -Rd servername -X stuff "stop $(printf '\r')"
+screen -Rd nombreservidor -X stuff "say §c► §eDeteniendo Servidor...§r $(printf '\r')"
+screen -Rd nombreservidor -X stuff "stop $(printf '\r')"
 
 echo "Deteniendo Servidor..."
 
@@ -57,23 +57,23 @@ echo "Deteniendo Servidor..."
 # Espere hasta 30 segundos para que el servidor se cierre
 StopChecks=0
 while [[ $StopChecks -lt 30 ]]; do
-  if ! screen -list | grep -q "\.servername"; then
+  if ! screen -list | grep -q "\.nombreservidor"; then
     break
   fi
   sleep 1;
   StopChecks=$((StopChecks+1))
 done
 
-if screen -list | grep -q "\.servername"; then
+if screen -list | grep -q "\.nombreservidor"; then
 
 
 # El servidor aún no se ha detenido después de 30 segundos, dígale a Screen que lo cierre
     echo "Minecraft server still hasn't closed after 30 seconds, closing screen manually"
-    screen -S servername -X quit
+    screen -S nombreservidor -X quit
     sleep 10
 fi
 
 
 #Inicie el servidor con ./iniciar.sh
 
-sudo -n systemctl start servername
+sudo -n systemctl start nombreservidor

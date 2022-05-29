@@ -1,16 +1,15 @@
 #!/bin/bash
-# Script de permisos por por MarcusGamer
+# Autor: Marcus Mayorga
 
 # Toma posesión de los archivos del servidor para corregir errores de permisos comunes, como el acceso denegado
 # Esto es muy común al restaurar copias de seguridad, mover y editar archivos, etc.
 
-# Si está utilizando el servicio systemd (sudo systemctl start servername), lo realiza automáticamente cada vez que inicia
 
 # Establecer ruta de la variable
-USERPATH="pathvariable"
-PathLength=${#USERPATH}
+PATH="pathvariable"
+PathLength=${#PATH}
 if [[ "$PathLength" -gt 12 ]]; then
-    PATH="$USERPATH"
+    PATH="$PATH"
 else
     echo "No se puede establecer la variable de ruta. ¡Es probable que necesite descargar una versión actualizada de InstaladorMC.sh de GitHub!"
 fi
@@ -35,19 +34,19 @@ while getopts ":a:" opt; do
   esac
 done
 
-echo "Tomar posesión de todos los archivos/carpetas del servidor en dirname/MinecraftBedrock/servername..."
+echo "Tomar posesión de todos los archivos/carpetas del servidor en directorio/MinecraftBedrock/nombreservidor..."
 if [[ $Automated == 1 ]]; then
-    sudo -n chown -R userxname dirname/MinecraftBedrock/servername
-    sudo -n chmod -R 755 dirname/MinecraftBedrock/servername/*.sh
-    sudo -n chmod 755 dirname/MinecraftBedrock/servername/bedrock_server
-    sudo -n chmod +x dirname/MinecraftBedrock/servername/bedrock_server
+    sudo -n chown -R userxname directorio/MinecraftBedrock/nombreservidor
+    sudo -n chmod -R 755 directorio/MinecraftBedrock/nombreservidor/*.sh
+    sudo -n chmod 755 directorio/MinecraftBedrock/nombreservidor/bedrock_server
+    sudo -n chmod +x directorio/MinecraftBedrock/nombreservidor/bedrock_server
 else
-    sudo chown -Rv userxname dirname/MinecraftBedrock/servername
-    sudo chmod -Rv 755 dirname/MinecraftBedrock/servername/*.sh
-    sudo chmod 755 dirname/MinecraftBedrock/servername/bedrock_server
-    sudo chmod +x dirname/MinecraftBedrock/servername/bedrock_server
+    sudo chown -Rv userxname directorio/MinecraftBedrock/nombreservidor
+    sudo chmod -Rv 755 directorio/MinecraftBedrock/nombreservidor/*.sh
+    sudo chmod 755 directorio/MinecraftBedrock/nombreservidor/bedrock_server
+    sudo chmod +x directorio/MinecraftBedrock/nombreservidor/bedrock_server
 
-    NewestLog=$(find dirname/MinecraftBedrock/servername/logs -type f -exec stat -c "%y %n" {} + | sort -r | head -n1 | cut -d " " -f 4-)
+    NewestLog=$(find directorio/MinecraftBedrock/nombreservidor/logs -type f -exec stat -c "%y %n" {} + | sort -r | head -n1 | cut -d " " -f 4-)
     if [ -z "$NewestLog" ]; then
       echo "No se encontraron archivos de registro"
     else

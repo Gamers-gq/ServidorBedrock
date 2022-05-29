@@ -43,7 +43,7 @@ Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 
 
 <h2>Donaciones</h2>
-<p>(☞ﾟヮﾟ)☞Si te gusto este metodo sencillo para tener tu propio servidor de Minecraft Bedrock puedes ayudarme</p><br>
+<p>(☞ﾟヮﾟ)☞Si te gusto este metodo sencillo para tener tu propio servidor de Minecraft Bedrock puedes ayudarme</p>
 <a href="https://www.paypal.com/paypalme/MarcusMayorga" target="_blank" rel="noopener noreferrer" ><strong>PayPal</strong></a>
 
 

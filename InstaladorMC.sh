@@ -1,14 +1,15 @@
 #!/bin/bash
 # Autor: Marcus Mayorga
 # Repositorio de GitHub: https://github.com/Gamers-gq/ServidorBedrock
-# Instrucciones:https://gamers.gq/
+# Instrucciones:https://gamers.gq/?page_id=1926
 
 # Instaldor de servidor de dedicado de Minecraft Bedrock
 # Para instalar escriba: curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/InstaladorMC.sh | bash
 
 
-echo "Script de instalación de Servidor Minecraft Bedrock por MarcusGamer"
+echo "Script de instalación de Servidor Minecraft Bedrock por Marcus Mayorga"
 echo "Habilita los puertos 19132 en tu firewall"
+echo "En caso de crear un nuevo servidor habilita los nuevos puertos en el firewall"
 
 # Leer la entrada del usuario con un mensaje
 function read_with_prompt {
@@ -43,40 +44,40 @@ Update_Scripts() {
   echo "Descargando iniciar.sh desde el repositorio..."
   curl -H "Accept-Encoding: identity" -L -o iniciar.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/iniciar.sh
   chmod +x iniciar.sh
-  sed -i "s:dirname:$DirName:g" iniciar.sh
-  sed -i "s:servername:$ServerName:g" iniciar.sh
+  sed -i "s:directorio:$DirName:g" iniciar.sh
+  sed -i "s:nombreservidor:$ServerName:g" iniciar.sh
   sed -i "s:userxname:$UserName:g" iniciar.sh
   sed -i "s<pathvariable<$PATH<g" iniciar.sh
 
   echo "Descargando detener.sh desde el repositorio..."
   curl -H "Accept-Encoding: identity" -L -o detener.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/detener.sh
   chmod +x detener.sh
-  sed -i "s:dirname:$DirName:g" detener.sh
-  sed -i "s:servername:$ServerName:g" detener.sh
+  sed -i "s:directorio:$DirName:g" detener.sh
+  sed -i "s:nombreservidor:$ServerName:g" detener.sh
   sed -i "s:userxname:$UserName:g" detener.sh
   sed -i "s<pathvariable<$PATH<g" detener.sh
 
   echo "Descargando reiniciar.sh desde el repositorio..."
   curl -H "Accept-Encoding: identity" -L -o reiniciar.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/reiniciar.sh
   chmod +x reiniciar.sh
-  sed -i "s:dirname:$DirName:g" reiniciar.sh
-  sed -i "s:servername:$ServerName:g" reiniciar.sh
+  sed -i "s:directorio:$DirName:g" reiniciar.sh
+  sed -i "s:nombreservidor:$ServerName:g" reiniciar.sh
   sed -i "s:userxname:$UserName:g" reiniciar.sh
   sed -i "s<pathvariable<$PATH<g" reiniciar.sh
 
   echo "Descargando permisos.sh desde el repositorio..."
   curl -H "Accept-Encoding: identity" -L -o permisos.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/permisos.sh
   chmod +x permisos.sh
-  sed -i "s:dirname:$DirName:g" permisos.sh
-  sed -i "s:servername:$ServerName:g" permisos.sh
+  sed -i "s:directorio:$DirName:g" permisos.sh
+  sed -i "s:nombreservidor:$ServerName:g" permisos.sh
   sed -i "s:userxname:$UserName:g" permisos.sh
   sed -i "s<pathvariable<$PATH<g" permisos.sh
 
   echo "Descargando updateservidor.sh desde el repositorio..."
   curl -H "Accept-Encoding: identity" -L -o updateservidor.sh https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/updateservidor.sh
   chmod +x updateservidor.sh
-  sed -i "s:dirname:$DirName:g" updateservidor.sh
-  sed -i "s:servername:$ServerName:g" updateservidor.sh
+  sed -i "s:directorio:$DirName:g" updateservidor.sh
+  sed -i "s:nombreservidor:$ServerName:g" updateservidor.sh
   sed -i "s:userxname:$UserName:g" updateservidor.sh
   sed -i "s<pathvariable<$PATH<g" updateservidor.sh
 
@@ -89,8 +90,8 @@ Update_Service() {
   sudo curl -H "Accept-Encoding: identity" -L -o /etc/systemd/system/$ServerName.service https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/minecraft.service
   sudo chmod +x /etc/systemd/system/$ServerName.service
   sudo sed -i "s:userxname:$UserName:g" /etc/systemd/system/$ServerName.service
-  sudo sed -i "s:dirname:$DirName:g" /etc/systemd/system/$ServerName.service
-  sudo sed -i "s:servername:$ServerName:g" /etc/systemd/system/$ServerName.service
+  sudo sed -i "s:directorio:$DirName:g" /etc/systemd/system/$ServerName.service
+  sudo sed -i "s:nombreservidor:$ServerName:g" /etc/systemd/system/$ServerName.service
   sed -i "/server-port=/c\server-port=$PortIPV4" server.properties
   sed -i "/server-portv6=/c\server-portv6=$PortIPV6" server.properties
   sudo systemctl daemon-reload
