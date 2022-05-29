@@ -10,7 +10,7 @@ Configura un servidor dedicado de Minecraft Bedrock en Ubuntu/Debian con opcione
   <li>Reinicios automaticos según la hora que indiques</li>
   <li>Copias de seguridad automáticas cuando el servidor se reinicia</li>
   <li>slot de jugadores configurable</li>
-  <li>Actualizaciónes manuales para evitar incovenientes si juegan con versiónes piratas</li>
+  <li>Actualización manual del servidor para evitar incovenientes si juegan con versiónes piratas</li>
   <li>control facil con los scripts: <strong> iniciar.sh - detener.sh - reiniciar.sh - actualizarMC.sh</strong> </li>
   <li>Agrega registro con marcas de tiempo al directorio "logs"</li>
 </ul>
