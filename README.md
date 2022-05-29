@@ -2,6 +2,7 @@
 
 Crea servidores de Minecraft Bedrock en sistemas Ubuntu/Debian con caracteristicas como: copias y backups automaticos<br>
 
+
 <h2>Características</h2>
 <ul>
   <li>Configura el servidor oficial de Minecraft Bedrock</li>
@@ -15,13 +16,14 @@ Crea servidores de Minecraft Bedrock en sistemas Ubuntu/Debian con caracteristic
   <li>Agrega registro con marcas de tiempo al directorio "logs"</li>
 </ul>
 
+
 <h2>Instalación</h2>
 Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 <pre>curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/InstaladorMC.sh | bash</pre>
 
+
 <h2>Guía de instalación</h2>
-<a href="https://gamers.gq/" target="_blank">Configuración del servidor dedicado Minecraft Bedrock</a>
-<a href="https://gamers.gq/" target="_blank" rel="noopener noreferrer">Configuración del servidor dedicado Minecraft Bedrock</a>
+<a href="https://gamers.gq/" target="_blank" rel="noopener noreferrer" >Configuración del servidor dedicado Minecraft Bedrock</a>
 
 
 <h2>Distribuciones probadas</h2>
@@ -42,8 +44,9 @@ Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 <h2>Donaciones</h2>
 <p>(☞ﾟヮﾟ)☞Si te gusto este metodo sencillo para tener tu propio servidor de Minecraft Bedrock puedes ayudarme</p>
 <ul>
-<a href="https://www.paypal.com/paypalme/MarcusMayorga"target="_blank" rel="noopener noreferrer"><strong>PayPal</strong></a>
+<a href="https://www.paypal.com/paypalme/MarcusMayorga" target="_blank" rel="noopener noreferrer" ><strong>PayPal</strong></a>
 </ul>
+
 
 <h2>Historial de actualizaciones</h2>
 <ul>
