@@ -1,8 +1,6 @@
 # Servidor Dedicado Minecraft Bedrock
 
 Configura un servidor dedicado de Minecraft Bedrock en Ubuntu/Debian con opciones para actualizaciones automáticas, copias de seguridad y ejecución automática al inicio<br>
-Vea las instrucciones de instalación en:<br>
-<br>
 
 <h2>Características</h2>
 <ul>
