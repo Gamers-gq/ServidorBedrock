@@ -20,7 +20,8 @@ Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 <pre>curl https://raw.githubusercontent.com/Gamers-gq/ServidorBedrock/master/InstaladorMC.sh | bash</pre>
 
 <h2>Guía de instalación</h2>
-<a href="https://gamers.gq/"target="_blank" rel="noopener noreferrer">Configuración del servidor dedicado Minecraft Bedrock</a>
+<a href="https://gamers.gq/" target="_blank">Configuración del servidor dedicado Minecraft Bedrock</a>
+<a href="https://gamers.gq/" target="_blank" rel="noopener noreferrer">Configuración del servidor dedicado Minecraft Bedrock</a>
 
 
 <h2>Distribuciones probadas</h2>
