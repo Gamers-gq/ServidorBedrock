@@ -1,6 +1,6 @@
 # Servidor Dedicado Minecraft Bedrock
 
-Crea un servidor Dedicado de Minecraft Bedrock en sistemas Ubuntu/Debian con caracteristicas como: copias y backups automaticos<br>
+Crea servidores de Minecraft Bedrock en sistemas Ubuntu/Debian con caracteristicas como: copias y backups automaticos<br>
 
 <h2>Características</h2>
 <ul>
