@@ -50,6 +50,6 @@ Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 
 <h2>Historial de actualizaciones</h2>
 <ul>
-  <li>29 de mayo de 2022</li>
-  <li>Versión final del instalador</li>
+  <li>29 de mayo de 2022</li><br>
+  Versión final del instalador
     </ul>
