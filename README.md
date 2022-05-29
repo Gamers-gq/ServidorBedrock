@@ -34,11 +34,12 @@ Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 
 
 <h2>Múltiples servidores</h2>
+<p>Cuando cree un nuevo servidor asegurese de cambiar los puertos de conexión y también de que estos esten agregados a su firewall</p>
+
 <p>Puede tener varios servidores a la vez ejecutando el InstaladorMC.sh nuevamente, solo elija un nombre que no haya usado anteriormente para crear la carpeta que contendra todos los archivos necesarios. La ruta de los scripts es $ROOTPATH/MinecraftBedrock/nombre_del_servidor</p>
 
 <p>En caso de escribir un nombre existente este simplemente actualizara los scripts</p>
 
-<p>cuando cree un nuevo servidor asegurese de cambiar los puertos de conexión y también de que estos mismo esten agregados a su firewall</p>
 
 
 <h2>Donaciones</h2>
