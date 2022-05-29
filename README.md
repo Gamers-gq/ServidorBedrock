@@ -43,8 +43,8 @@ Ejecuta el siguiente comando para instalar el Servidor Dedicado:<br>
 
 
 <h2>Donaciones</h2>
+<p>¿Me invitas un café?</p>
 <p>(☞ﾟヮﾟ)☞ <a href="https://www.paypal.com/paypalme/MarcusMayorga" target="_blank" rel="noopener noreferrer" ><strong>PayPal</strong></a></p>
-<p>Puedes ayudarme para seguir mejorando</p>
 
 
 <h2>Historial de actualizaciones</h2>
